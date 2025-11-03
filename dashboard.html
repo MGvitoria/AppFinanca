@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game over finanças - Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <h2 class="logo">Game over finanças</h2>
+      <nav>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="transacoes.html">Transações</a>
+        <a href="metas.html">Metas</a>
+      </nav>
+      <button class="logout">Sair</button>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <h1>Dashboard</h1>
+        <p>Bem-vindo de volta!</p>
+      </header>
+
+      <section class="cards">
+        <div class="card purple">
+          <h3>Saldo Disponível</h3>
+          <p class="value">R$ 0.00</p>
+          <span>Atualizado agora</span>
+        </div>
+
+        <div class="card">
+          <h3>Receitas</h3>
+          <p class="value">R$ 0.00</p>
+          <span class="positive">Atualizado agora</span>
+        </div>
+
+        <div class="card">
+          <h3>Despesas</h3>
+          <p class="value">R$ 0.00</p>
+          <span class="negative">Atualizado agora</span>
+        </div>
+
+        <div class="card blue">
+          <h3>Taxa de Economia</h3>
+          <p class="value">0%</p>
+          <span>Do total de receitas</span>
+        </div>
+      </section>
+
+      <section class="charts">
+        <div class="chart">
+          <h3>Receitas vs Despesas</h3>
+          <div class="fake-chart"></div>
+        </div>
+
+        <div class="chart">
+          <h3>Despesas por Categoria</h3>
+          <div class="fake-chart"></div>
+        </div>
+      </section>
+
+      <section class="progress-section">
+        <h3>Progresso das Metas</h3>
+
+        <div class="goal">
+          <p>Fundo de Emergência</p>
+          <span>R$ 0.00</span>
+          <div class="progress-bar"><div class="fill" style="width: 63%;"></div></div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

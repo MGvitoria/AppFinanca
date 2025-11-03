@@ -1,0 +1,31 @@
+<form action="/" method="POST">
+  <input type="hidden" name="action" value="login" id="formAction">
+  
+  <label for="email">Email</label>
+  <input type="email" name="email" id="email" placeholder="seu@email.com" required />
+
+  <label for="senha">Senha</label>
+  <input type="password" name="senha" id="senha" placeholder="********" required />
+
+  <button type="submit" class="btn" id="btnEnviar">Entrar</button>
+</form>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const action = document.getElementById('formAction');
+  const btn = document.getElementById('btnEnviar');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      if (tab.textContent === 'Cadastrar') {
+        action.value = 'register';
+        btn.textContent = 'Cadastrar';
+      } else {
+        action.value = 'login';
+        btn.textContent = 'Entrar';
+      }
+    });
+  });
+</script>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game over finanças - Transações</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2 class="logo">Game over finanças</h2>
+      <nav>
+        <a href="">Dashboard</a>
+        <a href="" class="active">Transações</a>
+        <a href="">Metas</a>
+      </nav>
+      <button class="logout">Sair</button>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <h1>Transações</h1>
+        <div class="acoes">
+          <button class="exportar">Exportar</button>
+          <button id="novaTransacaoBtn">Nova Transação</button>
+        </div>
+      </header>
+
+      <section class="registro">
+        <h3>Saldo Atual</h3>
+        <p>R$ /p>
+      </section>
+
+      <section class="transacoes">
+        <h3>Histórico de Transações</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th><th>Descrição</th><th>Categoria</th><th>Tipo</th><th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for t in transacoes %}
+              <tr>
+                <td>data</td>
+                <td>transacao</td>
+                <td>categoria</td>
+                <td><span class="">{{ t['tipo']|capitalize }}</span></td>
+                <td class="">
+                </td>
+              </tr>
+            {% else %}
+              <tr><td colspan="5">Nenhuma transação cadastrada.</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal" id="novaTransacaoModal">
+    <div class="modal-content">
+      <h2>Nova Transação</h2>
+      <form action="" method="POST">
+        <input type="date" name="data" required>
+        <input type="text" name="descricao" placeholder="Descrição" required>
+        <input type="text" name="categoria" placeholder="Categoria" required>
+        <select name="tipo" required>
+          <option value="">Tipo</option>
+          <option value="receita">Receita</option>
+          <option value="despesa">Despesa</option>
+        </select>
+        <input type="number" name="valor" placeholder="Valor" step="0.01" required>
+        <button type="submit">Salvar</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('novaTransacaoModal');
+    const btn = document.getElementById('novaTransacaoBtn');
+    btn.onclick = () => modal.style.display = 'flex';
+    modal.onclick = e => { if (e.target === modal) modal.style.display = 'none'; };
+  </script>
+</body>
+</html>
